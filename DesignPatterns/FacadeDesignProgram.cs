@@ -7,6 +7,18 @@ using System.Threading.Tasks;
 /*https://www.dofactory.com/*/
 namespace DesignPatterns
 {
+    /*FACADE comes under the Structural Design Pattern, which provides a simplified interface to a library, a framework or any other set of complex classes.
+     Consider, we are using a third party library in our App which provides of dozens of features, but our App require only limited of its features, to make it simple we can create FACADE
+     classes -  call the required funtionalities from it, so other classes from our just calls FACADE class and method for the funtionality, FACADE hides the complex functionalities and 
+     provides the simple interface/method. 
+
+        Also, added advantage is when we think about changing the framework/library we just need to modify FACADE, else it would have been change all over our App where and all library methods
+        have been called.
+
+        Credits: https://refactoring.guru/design-patterns/facade
+         */
+
+
     /*Structural Code for FACADE Pattern*/ /*Further follows the Real world example*/
     class FacadeDesignProgram
     {
@@ -35,30 +47,8 @@ namespace DesignPatterns
         }
     }
 
-    class SubSystemOne
-    {
-        public void methodOne()
-        {
-            Console.WriteLine("SubSytemOne Method");
-        }
-    }
 
-    class SubSystemTwo
-    {
-        public void methodTwo()
-        {
-            Console.WriteLine("SubSystemTwo Method");
-        }
-    }
-
-    class SubSystemThree
-    {
-        public void methodThree()
-        {
-            Console.WriteLine("SubSystemThree Method");
-        }
-    }
-
+    /*FACADE class in our APP to simplified interface to access the complex subsystems of library*/
     class Facade
     {
         private SubSystemOne _subSystemOne;
@@ -84,6 +74,33 @@ namespace DesignPatterns
             _subSystemThree.methodThree();
         }
     }
+
+    /*Consider these classes are from a Library or Complex subsystem of classes*/
+    class SubSystemOne
+    {
+        public void methodOne()
+        {
+            Console.WriteLine("SubSytemOne Method");
+        }
+    }
+
+    class SubSystemTwo
+    {
+        public void methodTwo()
+        {
+            Console.WriteLine("SubSystemTwo Method");
+        }
+    }
+
+    class SubSystemThree
+    {
+        public void methodThree()
+        {
+            Console.WriteLine("SubSystemThree Method");
+        }
+    }
+    /*Consider these classes are from a Library*/
+
 
     /*Real-world code in C#*/
     class Mortgage
