@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32.SafeHandles;
 
-/*Singleton is a Creational Design pattern, */
+/*Singleton is a Creational Design pattern, that lets us ensure that a class has only one instance, while providing a global point of access to this instance.*/
 namespace SingletonDesignPattern
 {
     class SingletonDesignProgram
